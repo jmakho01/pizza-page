@@ -37,7 +37,43 @@
              <!-- Select Pickup or Delivery -->
               <fieldset>
                 <legend>Select Pickup or Delivery</legend>
+                <label for = "pickup">
+                <input type = "radio" id = "pickup" name = "method" value = "pickup">Pickup</label><br>
+                <label for = "delivery">
+                <input type = "radio" id = "delivery" name = "method" value = "delivery">Delivery</label><br>
              </fieldset>
+
+             <!-- Select Toppings -->
+             <fieldset>
+                <legend>Select Toppings</legend>
+                <label for = "pepperoni">
+                <input type = "checkbox" id = "pepperoni" name = "toppings[]" value = "pepperoni"></label>Pepperoni<br>
+                <label for = "olives">
+                <input type = "checkbox" id = "olives" name = "toppings[]" value = "olives"></label>Olives<br>
+                <label for = "sausage">
+                <input type = "checkbox" id = "sausage" name = "toppings[]" value = "sausage"></label>Sausage<br>
+                <label for = "artichokes">
+                <input type = "checkbox" id = "artichokes" name = "toppings[]" value = "artichokes"></label>Artichokes<br>
+                <label for = "bacon">
+                <input type = "checkbox" id = "bacon" name = "toppings[]" value = "bacon"></label>Bacon<br>
+                <label for = "garlic">
+                <input type = "checkbox" id = "garlic" name = "toppings[]" value = "garlic"></label>Garlic<br>
+             </fieldset>
+
+
+             <!-- Select Pizza Size -->
+            <fieldset>
+                <legend>Select Pizza Size</legend>
+                <select id = "size" name = "size">
+                    <option value = "none">--Select a Size--</option>
+                    <option value = "small">Small</option>
+                    <option value = "medium">Medium</option>
+                    <option value = "large">Large</option>
+                </select>
+             </fieldset>
+
+             <!-- Add a Order button -->
+              <button type = "submit">Place Order!</button>
             </form>
         </div>
     <main>
