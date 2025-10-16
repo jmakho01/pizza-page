@@ -10,6 +10,9 @@
 
     <!-- Stylesheet -->
     <link rel = "stylesheet" href = "/styles/pizza-styles.css">
+
+    <!-- JavaScript -->
+    <script src = "js/pizza.js" defer></script>
 </head>
 <body>
     <main>
@@ -22,16 +25,19 @@
             <a id = "contact-button" href = "#" role = "button">Contact Us!</a>
         </header>
         
-        <form id = "pizza-form" action = "#" method = "get">
+        <form id = "pizza-form"  action = "#" method = "get">
             <!-- Contact Info -->
              <fieldset>
                 <legend>Contant Info</legend>
                 <label for = "fname">First Name:</label><br>
-                <input type = "text" id = "fname" name = "fname"><br>
+                <input type = "text" id = "fname" name = "fname">
+                <span id = "err-fname" class = "error">First name cannot be empty!</span><br>
                 <label for = "lname">Last Name:</label><br>
-                <input type = "text" id = "lname" name = "lname"><br>
+                <input type = "text" id = "lname" name = "lname">
+                <span id = "err-lname" class = "error">Last name cannot be empty!</span><br>
                 <label for = "email">Email Address:</label><br>
                 <input type = "email" id = "email" name = "email">
+                <span id = "err-email" class = "error">Email address cannot be empty!</span>
              </fieldset>
 
              <!-- Select Pickup or Delivery -->
@@ -40,7 +46,8 @@
                 <label for = "pickup">
                 <input type = "radio" id = "pickup" name = "method" value = "pickup">Pickup</label><br>
                 <label for = "delivery">
-                <input type = "radio" id = "delivery" name = "method" value = "delivery">Delivery</label><br>
+                <input type = "radio" id = "delivery" name = "method" value = "delivery">Delivery</label>
+                <span id = "err-method" class = "error">Please select a method!</span><br>
              </fieldset>
 
              <!-- Select Toppings -->
@@ -70,6 +77,7 @@
                     <option value = "medium">Medium</option>
                     <option value = "large">Large</option>
                 </select>
+                <span id = "err-size" class = "error">Please select a size!</span><br>
              </fieldset>
 
              <!-- Add a Order button -->
