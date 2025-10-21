@@ -1,4 +1,4 @@
-// When the form is submitted,  validate
+// When the form is submitted, validate
 document.getElementById('pizza-form').onsubmit = () => 
 {    
     clearErrors();
@@ -42,7 +42,7 @@ document.getElementById('pizza-form').onsubmit = () =>
         isValid = false;
     }
 
-    // Validate email address
+    // Validate size
     let size = document.getElementById('size').value.trim();
     if(size === "none") {
         document.getElementById('err-size').style.display = "inline";
