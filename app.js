@@ -34,8 +34,6 @@ app.post('/submit-order', (req, res) => {
         toppings: req.body.toppings,
         size: req.body.size
     };
-    console.log(order);
-
      // Add the order to our orders array
     orders.push(order);
     console.log(orders);
