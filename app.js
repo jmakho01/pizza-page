@@ -4,6 +4,9 @@ import express from 'express';
 // Create an instance of an Express application
 const app = express();
 
+// Set EJS as our view engine
+app.set('view engine', 'ejs');
+
 // Define the port number where our server will listen
 const PORT = 3000;
 
@@ -11,7 +14,7 @@ const PORT = 3000;
 app.use(express.static('public'));
 
 // Allow the app to parse form data
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Create an array to store orders
 const orders = [];
@@ -20,7 +23,7 @@ const orders = [];
 // req: contains information about the incoming request
 // res: allows us to send back a response to the client
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 // Add a route for the form submission
@@ -32,25 +35,26 @@ app.post('/submit-order', (req, res) => {
         email: req.body.email,
         method: req.body.method,
         toppings: req.body.toppings,
-        size: req.body.size
+        size: req.body.size,
+        timestamp: new Date()
     };
      // Add the order to our orders array
     orders.push(order);
     console.log(orders);
 
     // Direct the user to the confirmation page
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    res.render('confirmation', { order });
 });
 
 // Define a "contact-us" route
 app.get('/contact-us', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/contact.html`);
+    res.render('contact');
 });
 
 // Define a "admin" route
 app.get('/admin', (req, res) => {
     //res.sendFile(`${import.meta.dirname}/views/admin.html`);
-    res.send(orders);
+    res.render('admin', { orders });
 });
 
 // Start the server and listen on the specified port

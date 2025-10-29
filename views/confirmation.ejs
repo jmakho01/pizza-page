@@ -22,7 +22,14 @@
             <p id = "tagline">Serving GRC students for 50 years!</p>
             <hr>
             <p><i>The best pizza you've never had!</i></p>
-            <h1>Thank you for your order!</h1>
+            <h1>Thank you for your order, <%= order.fname %>!</h1>
+            <h2>Order Summary</h2>
+            <p>Name: <%= order.fname %> <%= order.lname %></p>
+            <p>Email: <%= order.email %></p>
+            <p>Method: <%= order.method %></p>
+            <p>Toppings: <%= order.toppings %></p>
+            <p>Size: <%= order.size %></p>
+            <p>Date/Time: <%= order.timestamp.toLocaleString() %></p>
         </header>
     <main>
 </body>
